@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Parking System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Smart Parking Dashboard</h1>
+  <div class="grid">
+    {% for slot in slots %}
+      <div class="slot {{ slot.status|lower }}">
+        Slot {{ slot.id }}<br>{{ slot.status }}
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
